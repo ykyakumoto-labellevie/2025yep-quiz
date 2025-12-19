@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2025 Year End Quiz</title> <style>
+    /* 余白を完全に消して全画面にする設定 */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden; /* スクロールバー強制非表示 */
+      background-color: #D8DEEC; /* 背景色 */
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <iframe id="quiz-frame" src=""></iframe>
+
+  <script>
+    // ▼▼▼ ここにあなたのGASアプリのURL(/exec)を入れてください ▼▼▼
+    const gasUrl = "";
+
+    // 1. 今のページのパラメータ(?team=Aなど)を取得
+    const params = window.location.search;
+
+    // 2. GASのURLにパラメータを合体させる
+    const finalUrl = gasUrl + params;
+
+    // 3. iframeにセットして表示開始
+    document.getElementById('quiz-frame').src = finalUrl;
+  </script>
+</body>
+</html>
